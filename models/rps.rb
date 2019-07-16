@@ -22,3 +22,5 @@ class RPSGame
   end
 
 end
+
+# p RPSGame.check_win("rock", "scissors")

@@ -5,25 +5,46 @@ require_relative('./models/rps.rb')
 also_reload('./models/*')
 
 get '/rock/scissors' do
-   'rock wins'
+  @winner = RPSGame.check_win('rock', 'scissors')
+  erb(:result)
 end
 
-get 'scissors/rock' do
-  'rock wins'
+get '/scissors/rock' do
+  @winner = RPSGame.check_win('scissors', 'rock')
+  erb(:result)
 end
 
 get '/paper/rock' do
-    'paper wins'
+  @winner = RPSGame.check_win('paper', 'rock')
+  erb(:result)
 end
 
 get '/rock/paper' do
-    'paper wins'
+  @winner = RPSGame.check_win('rock', 'paper')
+  erb(:result)
 end
 
 get '/scissors/paper' do
-    'scissors wins'
-  end
+  @winner = RPSGame.check_win('scissors', 'paper')
+  erb(:result)
+end
 
 get '/paper/scissors' do
-    'scissors wins'
-  end
+  @winner = RPSGame.check_win('paper', 'scissors')
+  erb(:result)
+end
+
+get '/rock/rock' do
+  @winner = RPSGame.check_win('rock', 'rock')
+  erb(:result)
+end
+
+get '/paper/paper' do
+  @winner = RPSGame.check_win('paper', 'paper')
+  erb(:result)
+end
+
+get '/scissors/scissors' do
+  @winner = RPSGame.check_win('scissors', 'scissors')
+  erb(:result)
+end
