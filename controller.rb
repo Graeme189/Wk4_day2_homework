@@ -48,3 +48,7 @@ get '/scissors/scissors' do
   @winner = RPSGame.check_win('scissors', 'scissors')
   erb(:result)
 end
+
+get '/welcome' do
+  erb(:welcome)
+end
